@@ -1,0 +1,68 @@
+.carousel {
+    position:relative;
+    overflow:hidden;
+}
+.carousel .carousel-inner {
+    width:100%;
+}
+.carousel .carousel-inner .placeholder {
+    display:block;
+    position:relative;
+    width:100%;
+}
+@keyframes slide-in-right {
+    from {left: -100%;}
+    to {left:0;}
+}
+@keyframes slide-out-right {
+    from {left: 0;}
+    to {left:100%;}
+}
+@keyframes slide-in-left {
+    from {left: 100%;}
+    to {left:0;}
+}
+@keyframes slide-out-left {
+    from {left: 0;}
+    to {left:-100%;}
+}
+.carousel .carousel-inner .hide-image {
+    display:none;
+}
+.carousel .carousel-inner .show-image {
+    display:block;
+    position:absolute;
+    top:0;
+    width:100%;
+}
+.carousel .carousel-inner .show-image.prev-image {
+    left:-100%;
+}
+.carousel .carousel-inner .show-image.current-image {
+    left:0;
+}
+.carousel .carousel-inner .show-image.next-image {
+    left:100%;
+}
+
+.carousel .carousel-inner .show-image.current-image.next {
+    animation-name: slide-in-left;
+    animation-timing-function: ease-in-out;
+    animation-duration: 0.5s;
+}
+.carousel .carousel-inner .show-image.prev-image.next {
+    animation-name: slide-out-left;
+    animation-timing-function: ease-in-out;
+    animation-duration: 0.5s;
+}
+
+.carousel .carousel-inner .show-image.current-image.prev {
+    animation-name: slide-in-right;
+    animation-timing-function: ease-in-out;
+    animation-duration: 0.5s;
+}
+.carousel .carousel-inner .show-image.next-image.prev {
+    animation-name: slide-out-right;
+    animation-timing-function: ease-in-out;
+    animation-duration: 0.5s;
+}

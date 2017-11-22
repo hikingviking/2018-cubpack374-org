@@ -8,7 +8,6 @@ import './Components/ThemeCubScouts.css';
 import About from './Pages/About';
 import Home from './Pages/Home';
 
-
 class App extends Component {
 	render() {
 

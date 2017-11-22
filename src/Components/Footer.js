@@ -11,8 +11,9 @@ class Footer extends Component {
 
 					<div className="row">
 						<div className="col-sm-4">
-							<p><b>Copyright &copy; 2011-2018 Cub Scout Pack 374</b></p>
+							<p><b>Copyright &copy; 2011-{ (new Date()).getFullYear() }<br />Cub Scout Pack 374<br />San Jose, CA</b></p>
 							<p>All rights reserved.</p>
+							<p>Version: { process.env.REACT_APP_VERSION }</p>
 						</div>
 						<div className="col-sm-4">
 							<p><b>The Scout Oath</b></p>
@@ -30,7 +31,6 @@ class Footer extends Component {
 							<p>A Scout is trustworthy, loyal, helpful, friendly, courteous, kind, obedient, cheerful, thrifty, brave, clean, and reverent.</p>
 						</div>
 					</div>
-
 				</div>
 			</footer>
 		)
