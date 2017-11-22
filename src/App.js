@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Header from './Components/Header';
 import Footer from './Components/Footer';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
 import './Components/ThemeCubScouts.css';
 
@@ -22,8 +22,11 @@ class App extends Component {
 			<BrowserRouter>
 				<div className="App">
 					<Header />
-					<Route path="/about" component={About} />
-					<Route path="/" component={Home} />
+					<Switch>
+						<Route path="/about" component={About} />
+						<Route exact path="/" component={Home} />
+						<Route component={Home} />
+					</Switch>
 					<Footer />
 				</div>
 			</BrowserRouter>
