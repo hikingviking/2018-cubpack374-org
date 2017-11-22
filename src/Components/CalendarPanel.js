@@ -15,11 +15,15 @@ class CalendarPanel extends Component {
 
     componentWillMount ()
     {
+    }
+
+    componentWillReceiveProps (nextProps)
+    {
         var _this = this;
         var ics2JsonUrl = this.state.ics2jsonFunction +
-            '?filter=' + this.props.filter +
-            '&count=' + this.props.count +
-            '&ics=' + this.props.icsUrl;
+            '?filter=' + nextProps.filter +
+            '&count=' + nextProps.count +
+            '&ics=' + nextProps.icsUrl;
 
         fetch(ics2JsonUrl)
 			.then(res => res.json())
@@ -36,6 +40,9 @@ class CalendarPanel extends Component {
 
     render ()
     {
+        if (this.state.events === null || typeof this.state.events == 'undefined' || this.state.events.length === 0)
+            return null;
+
         return (
             <div className={ this.props.className }>
                 <div className="panel-heading">

@@ -25,7 +25,6 @@ class Home extends Component
 			{
 				homeCarouselImages.push (thedata[k]);
 			}
-			console.log(homeCarouselImages);
 			currentState['homeCarouselImages'] = homeCarouselImages;
 			this.setState(currentState);
 		});
@@ -33,17 +32,6 @@ class Home extends Component
 
 	render ()
 	{
-
-		// console.log('ics url: ' + process.env.REACT_APP_ICS2JSON_URL);
-        //
-		// fetch("https://us-central1-b0r6-net.cloudfunctions.net/local-ics2json?filter=future&count=2&ics=http://www.scoutbook.com/ics/8524.JCQJD.ics")
-		// // fetch("https://us-central1-b0r6-net.cloudfunctions.net/test-cubpack374-org-ics2json?filter=future&count=2&http://www.scoutbook.com/ics/8524.JCQJD.ics")
-		// 	.then(res => res.json())
-		// 	.then((out) => {
-		// 		console.log(out);
-		// 	})
-		// 	.catch(err => { throw err });
-
 		return (
 			<div>
 				<Carousel images={ this.state.homeCarouselImages} delay={ 5000 } />
@@ -68,7 +56,6 @@ class Home extends Component
 				    <hr />
 
 					<CalendarPanel className="panel panel-info" count={10} filter="future" icsUrl="http://www.scoutbook.com/ics/8524.JCQJD.ics" />
-
 
 				</div>
 			</div>
